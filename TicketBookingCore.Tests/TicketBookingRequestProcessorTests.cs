@@ -57,7 +57,7 @@ namespace TicketBookingCore.Tests
             TicketBookingResponse response = _processor.Book(request);
 
             //Assert
-            Assert.Null(response); // <- Tycker detta inte är ett rimligt fel, men gör så att testet misslyckas
+            Assert.False(response.Success);
         }
 
         [Fact]
