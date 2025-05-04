@@ -41,6 +41,25 @@ namespace TicketBookingCore.Tests
             Assert.Equal(request.LastName, response.LastName);
             Assert.Equal(request.Email, response.Email);
         }
+
+        [Fact]
+        public void ShouldReturnErrorForInvalidEmail()
+        {
+            //Arrange
+            var request = new TicketBookingRequest
+            {
+                FirstName = "Olle",
+                LastName = "Frisk",
+                Email = "ollefrisk@hotmailcom"
+            };
+
+            //Act
+            TicketBookingResponse response = _processor.Book(request);
+
+            //Assert
+            Assert.Null(response); // <- Tycker detta inte är ett rimligt fel, men gör så att testet misslyckas
+        }
+
         [Fact]
         public void ShouldThrowExceptionIfRequestIsNull()
         {
