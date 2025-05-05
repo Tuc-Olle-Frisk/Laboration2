@@ -50,7 +50,7 @@ namespace TicketBookingCore.Tests
             {
                 FirstName = "Olle",
                 LastName = "Frisk",
-                Email = "ollefrisk@hotmailcom"
+                Email = "ollefriskhotmailcom"
             };
 
             //Act
@@ -58,6 +58,7 @@ namespace TicketBookingCore.Tests
 
             //Assert
             Assert.False(response.Success);
+            Assert.False(string.IsNullOrEmpty(response.ErrorMessage));
         }
 
         [Fact]

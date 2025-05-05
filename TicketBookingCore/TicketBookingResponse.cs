@@ -2,7 +2,7 @@
 {
     public class TicketBookingResponse : TicketBookingBase
     {
-        public bool Success { get; internal set; }
-        public string ErrorMessage { get; internal set; }
+        public bool Success = true;
+        public string? ErrorMessage { get; set; }
     }
 }

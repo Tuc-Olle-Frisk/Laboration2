@@ -25,10 +25,8 @@ namespace TicketBookingCore
                     ErrorMessage = "Invalid email address."
                 };
             }
-            ;
 
             _ticketBookingRepository.Save(Create<TicketBooking>(request));
-
             return Create<TicketBookingResponse>(request);
         }
 
@@ -58,7 +56,7 @@ namespace TicketBookingCore
             {
                 FirstName = request.FirstName,
                 LastName = request.LastName,
-                Email = request.Email
+                Email = request.Email,
             };
         }
     }
